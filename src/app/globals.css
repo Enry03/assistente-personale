@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #ffffff;
+  --bg-subtle: #f7f7f5;
+  --bg-hover: #efefed;
+  --fg: #1f1f1e;
+  --fg-muted: #6b6b68;
+  --fg-faint: #9b9a97;
+  --border: #e9e9e7;
+  --accent: #2e6bf0;
+  --accent-fg: #ffffff;
+  --accent-soft: #e8effd;
+  --danger: #d4483b;
+  --danger-soft: #fbeceb;
+  --warn: #c27c0e;
+  --warn-soft: #fbf3e4;
+  --ok: #2f8a57;
+  --ok-soft: #e7f4ec;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #191919;
+  --bg-subtle: #202020;
+  --bg-hover: #2a2a2a;
+  --fg: #e8e8e6;
+  --fg-muted: #a3a3a0;
+  --fg-faint: #6f6f6c;
+  --border: #2f2f2f;
+  --accent: #5b8cff;
+  --accent-fg: #0d1117;
+  --accent-soft: #1e2a44;
+  --danger: #ef6b5e;
+  --danger-soft: #3a2220;
+  --warn: #e3a64a;
+  --warn-soft: #3a2f1e;
+  --ok: #5cc28a;
+  --ok-soft: #1d3326;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-hover: var(--bg-hover);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+.prose-chat p {
+  margin: 0.4em 0;
+}
+.prose-chat ul,
+.prose-chat ol {
+  margin: 0.4em 0;
+  padding-left: 1.3em;
+}
+.prose-chat ul {
+  list-style: disc;
+}
+.prose-chat ol {
+  list-style: decimal;
+}
+.prose-chat a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.prose-chat code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-hover);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+.prose-chat strong {
+  font-weight: 600;
+}
+.prose-chat h1,
+.prose-chat h2,
+.prose-chat h3 {
+  font-weight: 600;
+  margin: 0.8em 0 0.3em;
+}
