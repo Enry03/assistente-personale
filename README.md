@@ -6,7 +6,7 @@ Web app privata di Enrico: homepage **Oggi**, task e promemoria, chat con Claude
 
 - **Next.js 16** (App Router, `src/proxy.ts` per l'autenticazione) su **Vercel**
 - **Supabase**: Postgres + RLS, Auth con 2FA TOTP obbligatoria, Storage privato, pgvector
-- **Claude** (`@anthropic-ai/sdk`, modello in `CLAUDE_MODEL`, default `claude-opus-5-5`)
+- **Claude** (`@anthropic-ai/sdk`, modello in `CLAUDE_MODEL`, default `claude-haiku-5-5` per costi minimi)
 - **Voyage AI** per gli embedding (1024 dimensioni)
 - Notifiche **Web Push** (PWA), inviate da `/api/cron/reminders` chiamato da `pg_cron`
 

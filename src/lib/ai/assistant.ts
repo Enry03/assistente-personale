@@ -2,7 +2,7 @@ import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
-import { anthropic, MODEL, FALLBACK_BETA } from "./claude";
+import { anthropic, MODEL, FALLBACK_PARAMS } from "./claude";
 import { hybridSearch, type SearchHit } from "./search";
 import { nowInRomeLabel, romeDayRange, formatDateTime } from "@/lib/dates";
 
@@ -243,8 +243,7 @@ export async function runChat(opts: {
     const stream = anthropic.beta.messages.stream({
       model: MODEL,
       max_tokens: 16000,
-      betas: [FALLBACK_BETA],
-      fallbacks: "default",
+      ...FALLBACK_PARAMS,
       output_config: { effort: "low" },
       cache_control: { type: "ephemeral" },
       system: SYSTEM,
